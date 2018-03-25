@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+	<h2>Add a new project</h2>
+	<form id="project_form" method="post" action="{% url 'index' %}">
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+			{{ hidden }}
+		{% endfor %}
+		{% for field in form.visible_fields %}
+			{{ field.errors }}
+			{{ field.help_text }}
+			{{ field }}
+		{% endfor %}
+		<input type="submit" name="submit" value="Create Project" />
+	</form>
+{% endblock %}
