@@ -21,14 +21,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">FinishOnTime</a>
+            <a class="navbar-brand" href="{% url 'FinishOnTime:index' %}">FinishOnTime</a>
         </div>
 
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="{% block about %}{% endblock %}"><a href="#">About</a></li>
-                <li class="{% block library %}{% endblock %}"><a href="#">Library</a></li>
+                <li class="{% block about %}{% endblock %}"><a href="{% url 'FinishOnTime:about' %}">About</a></li>
+                <li class="{% block library %}{% endblock %}"><a href="{% url 'FinishOnTime:library' %}">Library</a></li>
             </ul>
         </div>
 
