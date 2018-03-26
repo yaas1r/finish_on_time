@@ -27,14 +27,19 @@
         <!-- Items -->
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="{% block about %}{% endblock %}"><a href="{% url 'FinishOnTime:about' %}">About</a></li>
-                <li class="{% block library %}{% endblock %}"><a href="{% url 'FinishOnTime:library' %}">Library</a></li>
+                <li><a href="{% url 'FinishOnTime:index' %}">Home</a></li>
+                <li><a href="{% url 'FinishOnTime:about' %}">About</a></li>
             </ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Log In</a></li>
+				<li><a href="#">Register</a></li>
+			</ul>
         </div>
 
     </div>
 </nav>
 {% block body %}
+
 {% endblock %}
 </body>
 </html>

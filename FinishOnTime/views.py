@@ -19,8 +19,18 @@ from datetime import datetime
 from django.http import HttpResponse
 
 def index(request):
-	context_dict = {'boldmessage': 'Index page'}
-	return render(request, 'FinishOnTime/index.html', context_dict)
+	if request.method == 'POST':
+		projectform = ProjectForm(request.POST)
+		subtaskform = SubtaskForm(request.POST)
+		timeslotform = Timeslot(request.POST)
+		if index_form.is_valid():
+			pass
+	else: 
+		projectform = ProjectForm()
+		subtaskform = SubtaskForm()
+		timeslotform = TimeslotForm()
+	return render(request, 'FinishOnTime/index.html', {'projectform': projectform,'subtaskform': subtaskform,'timeslotform': timeslotform})
+	
 @login_required
 def library(request):
 	context_dict = {}

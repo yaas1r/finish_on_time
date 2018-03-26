@@ -38,6 +38,7 @@ class Subtask(models.Model):
 	deadline = models.DateTimeField()
 	hours = models.IntegerField(default=0)
 	progress = models.BooleanField(default=False)
+	level = models.CharField(max_length=1)
 
 	def __str__(self): # For Python 2, use __unicode__ too
 		return self.title

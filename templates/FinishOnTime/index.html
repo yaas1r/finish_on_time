@@ -1,6 +1,17 @@
 {% extends 'FinishOnTime/base.html' %}
 {% load staticfiles %}
 
-{% block body_block %}
-	<h1>{{ boldmessage }}</h1>
+{% block body %}
+<h1>Index Page</h1>
+	<form id="index_form" method="post" action=".">
+		{% csrf_token %} 
+	
+		{{ projectform.as_p }}
+		{{ subtask.as_p }}
+		{{ timeslotform.as_p }}
+	
+		<input type="submit" name="submit" value="Generate the workplan" />
+	</form>
+		
+		
 {% endblock %}
